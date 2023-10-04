@@ -1,32 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { RecordsService } from '../records.service';
+import { DataService } from '../data.service';
+
 @Component({
   selector: 'app-emp-info',
   templateUrl: './emp-info.component.html',
   styleUrls: ['./emp-info.component.css'],
-  providers: [RecordsService]
+  providers: [DataService]
 })
 export class EmpInfoComponent implements OnInit {
 
 
-  infoRec1: string[] = [];
-  infoRec2: string[] = [];
-  infoRec3: string[] = [];
-  time : string = this.rservices.sayTime().toString();
-  hiValue: string = this.rservices.sayHi();
+  infoRecived1: string[] = [];
+  // infoRecived2: string[] = [];
+  // infoRecived3: string[] = [];
 
-  getInfo1(){
-    this.infoRec1 = this.rservices.getInfo1()
-  }
-  
-  SayHi(){
-    this.hiValue = this.rservices.sayHi()
+  getInfoFormService1(){
+    this.infoRecived1 = this.rservices.getInfo1()
   }
 
-  SayTime(){
-    this.time = this.rservices.sayTime().toString()
+  updateInfo(frm:any){
+    this.rservices.addInfo(frm.value.location)
   }
-  constructor(private rservices: RecordsService) { }
+  constructor(private rservices: DataService) { }
 
   ngOnInit(): void {}
 }
