@@ -7,7 +7,7 @@ export class RecordsService {
   info1: string[] = ["Adam Tylor" , "2eE" , "asadi"]
   info2: string[] = ["mehrshad" , "2esdE" , "milni"]
   info3: string[] = ["arya" , "2x2eE" , "tehrany"]
-
+  
 
   getInfo1(): string[]{
     return this.info1
@@ -20,8 +20,11 @@ export class RecordsService {
   }
 
   sayHi(): string{
-    return 'hello bitch!'
+    return 'hello!'
   }
 
+  sayTime(){
+    return new Date().getTime()
+  }
   constructor() { }
 }

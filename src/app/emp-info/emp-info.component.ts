@@ -12,8 +12,8 @@ export class EmpInfoComponent implements OnInit {
   infoRec1: string[] = [];
   infoRec2: string[] = [];
   infoRec3: string[] = [];
-
-  hiValue: string = 'NULL';
+  time : string = this.rservices.sayTime().toString();
+  hiValue: string = this.rservices.sayHi();
 
   getInfo1(){
     this.infoRec1 = this.rservices.getInfo1()
@@ -21,6 +21,10 @@ export class EmpInfoComponent implements OnInit {
   
   SayHi(){
     this.hiValue = this.rservices.sayHi()
+  }
+
+  SayTime(){
+    this.time = this.rservices.sayTime().toString()
   }
   constructor(private rservices: RecordsService) { }
 
