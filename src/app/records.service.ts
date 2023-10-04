@@ -19,5 +19,9 @@ export class RecordsService {
     return this.info3
   }
 
+  sayHi(): string{
+    return 'hello bitch!'
+  }
+
   constructor() { }
 }

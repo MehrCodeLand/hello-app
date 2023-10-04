@@ -13,10 +13,15 @@ export class EmpInfoComponent implements OnInit {
   infoRec2: string[] = [];
   infoRec3: string[] = [];
 
+  hiValue: string = 'NULL';
+
   getInfo1(){
     this.infoRec1 = this.rservices.getInfo1()
   }
   
+  SayHi(){
+    this.hiValue = this.rservices.sayHi()
+  }
   constructor(private rservices: RecordsService) { }
 
   ngOnInit(): void {}
